@@ -8,12 +8,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      beforeEnter: (to, from) => {
+      /* beforeEnter: (to, from) => {
         if (localStorage.getItem('user')) {
           return '/completed'
         }
-        /* return '/submission-closed' */
-      }
+      } */
     },
     {
       path: '/submission-closed',
@@ -26,7 +25,6 @@ const router = createRouter({
         if (!localStorage.getItem('user')) {
           return '/'
         }
-        /* return '/submission-closed' */
       }
     },
     {
@@ -36,23 +34,22 @@ const router = createRouter({
         if (!localStorage.getItem('user')) {
           return '/'
         }
-        /* return '/submission-closed' */
       }
     },
     {
       path: '/admin',
       component: () => import('@/views/AdminView.vue'),
-      beforeEnter: (to, from) => {
+      /* beforeEnter: (to, from) => {
         if (!localStorage.getItem('isAuthenticated')) return '/'
-      }
+      } */
     },
     {
       path: '/generate-profile/:id',
       name: 'generate-profile',
       component: () => import('@/views/PosterView.vue'),
-      beforeEnter: (to, from) => {
+     /*  beforeEnter: (to, from) => {
         if (!localStorage.getItem('isAuthenticated')) return '/'
-      }
+      } */
     }
   ]
 })
